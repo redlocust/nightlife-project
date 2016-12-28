@@ -1,11 +1,16 @@
 const express = require("express");
 const morgan = require("morgan");
 const jade = require("jade");
+const path = require('path');
 
 var app = express();
 
+app.use(morgan('combined'));
+app.use(express.static(path.join(__dirname + '/public')));
+app.set("view engine", "jade");
+
 app.get("/", function (req, res) {
-  res.send("Hello");
+  res.render("index");
 });
 
 app.listen(3000);
