@@ -7,10 +7,15 @@ var app = express();
 
 app.use(morgan('combined'));
 app.use(express.static(path.join(__dirname + '/public')));
+
 app.set("view engine", "jade");
 
 app.get("/", function (req, res) {
   res.render("index");
+});
+
+app.post("/", function (req, res) {
+  res.sendFile(__dirname + "/public/img/hamster.jpg");
 });
 
 app.listen(3000);

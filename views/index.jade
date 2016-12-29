@@ -1,8 +1,18 @@
-link(rel='stylesheet', href='/css/font-awesome.min.css')
-link(rel='stylesheet', href='/css/style.css')
+extends layout
 
-div.header
-    h1 Plans tonight?
-    i.fa.fa-map-marker.header__icon
-    i.fa.fa-cab.header__icon
-    i.fa.fa-glass.header__icon
+block content
+    header.container.main-header
+        .raw
+            .col-xs-6.col-xs-offset-3
+                h1 Plans tonight?
+                i.fa.fa-map-marker.main-header__icon
+                i.fa.fa-cab.main-header__icon
+                i.fa.fa-glass.main-header__icon
+                p.main-header__text See which bars are hoppin' tonight and RSVP ahead of time! Remember: take a cab and drink responsibly.
+    .container
+        .raw
+            .col-lg-12
+                form(method="post").form-inline
+                    .form-group.col-xs-10
+                        input(type="text", name="address", placeholder="Where you at?").form-control.input-normal
+                    button.btn.btn-default.col-xs-2 GO
