@@ -22,3 +22,17 @@ body {
 .form-control {
   width: 100% !important;
 }
+
+.item-list {
+  margin-top: 10px;
+}
+
+.bar-item__image {
+  border-radius: 6px;
+}
+
+.bar-item__link {
+  display: inline-block;
+  color: #fff;
+  margin-bottom:  6px;
+}

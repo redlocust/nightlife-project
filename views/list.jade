@@ -2,7 +2,7 @@ extends layout
 
 block content
     header.container.main-header
-        .raw
+        .row
             .col-xs-6.col-xs-offset-3
                 h1 Plans tonight?
                 i.fa.fa-map-marker.main-header__icon
@@ -10,7 +10,7 @@ block content
                 i.fa.fa-glass.main-header__icon
                 p.main-header__text See which bars are hoppin' tonight and RSVP ahead of time! Remember: take a cab and drink responsibly.
     .container
-        .raw
+        .row
             .col-lg-12
                 form(method="post").form-inline
                     .form-group.col-xs-10
@@ -18,8 +18,13 @@ block content
                     button.btn.btn-default.col-xs-2 GO
 
     .container
-        .raw
+        .row
             .col-lg-12
-                br
                 each item in itemList
-                    img(src="#{item.image_url}")
+                    .row.item-list
+                        .col-xs-2.col-xs-offset-1
+                            img.bar-item__image(src="#{item.image_url}")
+                        .col-xs-7
+                            a.bar-item__link #{item.name}
+                            p: i #{item.snippet_text}
+
